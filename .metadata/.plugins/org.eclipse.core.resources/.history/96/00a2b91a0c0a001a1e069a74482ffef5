@@ -1,0 +1,46 @@
+package main;
+
+
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class FizzBuzzTest {
+ 
+	
+	@Test
+	public void shouldReturn1() 
+	{
+		FizzBuzz fizzBuzz = new FizzBuzz();
+		assertEquals(fizzBuzz.calculFizzBuzz(1), "1");
+	}
+	
+	@Test
+	public void shouldReturn2() 
+	{
+		FizzBuzz fizzBuzz = new FizzBuzz();
+		assertEquals(fizzBuzz.calculFizzBuzz(2), "2");
+	}
+	
+	@Test
+	public void shouldReturnFizz() 
+	{
+		FizzBuzz fizzBuzz = new FizzBuzz();
+		assertEquals(fizzBuzz.calculFizzBuzz(3), "Fizz");
+	}
+	
+	@Test
+	public void shouldReturnBuzz() 
+	{
+		FizzBuzz fizzBuzz = new FizzBuzz();
+		assertEquals(fizzBuzz.calculFizzBuzz(5), "Buzz");
+	}
+	
+	@Test
+	public void shouldReturnFizz() 
+	{
+		FizzBuzz fizzBuzz = new FizzBuzz();
+		assertEquals(fizzBuzz.calculFizzBuzz(6), "Fizz");
+	}
+}

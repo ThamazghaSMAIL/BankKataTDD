@@ -1,0 +1,33 @@
+package main;
+
+
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class FizzBuzzTest {
+ 
+	
+	@Test
+	public void shouldReturn1() 
+	{
+		FizzBuzz fizzBuzz = new FizzBuzz();
+		assertTrue(fizzBuzz.calculFizzBuzz(1)==1);
+	}
+	
+	@Test
+	public void shouldReturn2() 
+	{
+		FizzBuzz fizzBuzz = new FizzBuzz();
+		assertTrue(fizzBuzz.calculFizzBuzz(2)==2);
+	}
+	
+	@Test
+	public void shouldReturnFizz() 
+	{
+		FizzBuzz fizzBuzz = new FizzBuzz();
+		assertTrue(fizzBuzz.calculFizzBuzz(3) == "Fizz");
+	}
+	
+}

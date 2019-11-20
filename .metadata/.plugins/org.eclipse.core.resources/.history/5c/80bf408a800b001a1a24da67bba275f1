@@ -1,0 +1,44 @@
+package main;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.*;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+import org.apache.http.message.BasicNameValuePair;
+
+public class TransfertAccountProd implements TransfertAccount{
+
+	@Override
+	public int transferPost(String ibanFrom, String ibanTo, Integer amount) {
+		HttpPost post = new HttpPost("https://httpbin.org/post");
+
+		// add request parameter, form parameters
+		List<NameValuePair> urlParameters = new ArrayList<>();
+		urlParameters.add(new BasicNameValuePair("username", "abc"));
+		urlParameters.add(new BasicNameValuePair("password", "123"));
+		urlParameters.add(new BasicNameValuePair("custom", "secret"));
+
+		try {
+			post.setEntity(new UrlEncodedFormEntity(urlParameters));
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+
+		try (CloseableHttpClient httpClient = HttpClients.createDefault();
+				CloseableHttpResponse response = httpClient.execute(post)) {
+
+			System.out.println(EntityUtils.toString(response.getEntity()));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+}

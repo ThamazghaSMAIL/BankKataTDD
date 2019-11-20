@@ -1,0 +1,9 @@
+package main;
+
+public class FakeTransfertAccount implements TransfertAccount{
+
+	@Override
+	public int transferPost() {
+		return 0;
+	}
+}

@@ -1,0 +1,25 @@
+package main;
+
+public class TransfertAccountProd implements TransfertAccount{
+
+	@Override
+	public int transferPost(String ibanFrom, String ibanTo, Integer amount) {
+	}
+	HttpPost post = new HttpPost("https://httpbin.org/post");
+
+    // add request parameter, form parameters
+    List<NameValuePair> urlParameters = new ArrayList<>();
+    urlParameters.add(new BasicNameValuePair("username", "abc"));
+    urlParameters.add(new BasicNameValuePair("password", "123"));
+    urlParameters.add(new BasicNameValuePair("custom", "secret"));
+
+    post.setEntity(new UrlEncodedFormEntity(urlParameters));
+
+    try (CloseableHttpClient httpClient = HttpClients.createDefault();
+         CloseableHttpResponse response = httpClient.execute(post)) {
+
+        System.out.println(EntityUtils.toString(response.getEntity()));
+    }
+    return 0;
+
+}

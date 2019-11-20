@@ -1,0 +1,45 @@
+package main;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Bank {
+
+	public List<Transaction> transactions;
+	DateGenerator dateGenerator;
+	public Bank(DateGenerator dateGenerator) {
+		this.dateGenerator = dateGenerator;
+		solde = 0;
+		transactions = new ArrayList<Transaction>();
+	}
+	private double solde;
+
+	public double getSolde() {
+		return solde;
+	}
+
+	public void depot(double d) {
+		if( d > 0 ) {
+			solde += d;
+			transactions.add(new Transaction(dateGenerator.getTime(), d, solde));
+		}
+	}
+
+	public void retrait(double sub) {
+		if( sub > 0 ) {
+			solde -= sub;
+			transactions.add(new Transaction(dateGenerator.getTime(), -sub, solde));
+		}
+	}
+
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+
+	public int transfert(String ibanFrom, String ibanTo, int amount) {
+		return 200;
+	}
+
+}

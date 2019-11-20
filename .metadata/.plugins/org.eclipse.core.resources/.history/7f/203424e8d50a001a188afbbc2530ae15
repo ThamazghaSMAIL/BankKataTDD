@@ -1,0 +1,39 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Bank {
+
+	public List<String> transactions;
+
+	public Bank() {
+		solde = 0;
+		transactions = new ArrayList<String>();
+	}
+	private double solde;
+
+	public double getSolde() {
+		return solde;
+	}
+
+	public void depot(double d) {
+		if( d > 0 ) {
+			solde += d;
+			transactions.add("depot");
+		}
+	}
+
+	public void retrait(double sub) {
+		if( sub > 0 ) {
+			solde -= sub;
+			transactions.add("retrait");
+		}
+	}
+
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+
+
+}

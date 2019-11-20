@@ -1,0 +1,20 @@
+package main;
+
+public class Bank {
+
+	public Bank() {
+		solde = 0;
+	}
+	private float solde;
+
+	public float getSolde() {
+		return solde;
+	}
+
+	public void depot(float add) {
+		if( add > 0 )
+			solde += add;
+	}
+
+
+}

@@ -1,0 +1,9 @@
+package main;
+
+public class FizzBuzz {
+
+	public static int calculFizzBuzz(int i) {
+		return 0;
+	}
+
+}

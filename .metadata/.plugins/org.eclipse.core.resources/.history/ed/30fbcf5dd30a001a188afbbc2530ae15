@@ -1,0 +1,25 @@
+package main;
+
+public class Bank {
+
+	public Bank() {
+		solde = 0;
+	}
+	private double solde;
+
+	public double getSolde() {
+		return solde;
+	}
+
+	public void depot(double d) {
+		if( d > 0 )
+			solde += d;
+	}
+
+	public void retrait(double sub) {
+		if( sub > 0 )
+			solde -= sub;
+	}
+
+
+}

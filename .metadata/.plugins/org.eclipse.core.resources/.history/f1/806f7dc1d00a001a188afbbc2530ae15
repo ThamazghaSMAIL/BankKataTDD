@@ -1,0 +1,10 @@
+package main;
+
+public class Bank {
+
+	public int getSolde() {
+		return 0;
+	}
+	
+
+}

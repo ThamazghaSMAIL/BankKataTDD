@@ -1,0 +1,11 @@
+package main;
+
+public class FizzBuzz {
+
+	public String calculFizzBuzz(int i) {
+		if( i == 3 )
+			return "Fizz";
+		return Integer.toString(i);
+	}
+
+}

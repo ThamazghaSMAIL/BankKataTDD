@@ -1,0 +1,15 @@
+package main;
+
+public class FakeDateGenerator implements DateGenerator{
+
+	int counter = 0;
+	@Override
+	public String getTime() {
+		if( counter++ == 0)
+			return "19/11/2019 00:00:04";
+
+		return "19/11/2019 00:05:04";
+	}
+
+
+}

@@ -1,0 +1,65 @@
+package main;
+
+public class Tennis {
+
+	public Tennis() {
+		scorePlayer2 = 0;
+		scorePlayer1 = 0;
+		playerwin = 0;
+	}
+	public int scorePlayer1;
+	public int scorePlayer2;
+
+	public int playerwin;
+	
+	public String getResult() {
+		if (playerwin > 0)
+			return "Player "+ playerwin+ " Win";
+
+		int advantageResult = calculAdvantage();
+		if (advantageResult > 0)
+			return "Advantage for Player "+advantageResult;
+		
+		if (scorePlayer1 != scorePlayer2)
+			return convertScore(scorePlayer1) + "-" + convertScore(scorePlayer2);
+		
+		return "Deuce";
+	}
+
+
+	public String convertScore(int score) {
+		if (score == 1)
+			return "15";
+		else if (score == 2)
+			return "30";
+		else if (score == 3)
+			return "40";
+		return "0";
+	}
+
+		if (player == 1 && ( playerwin == 0 ))
+			scorePlayer1++;
+		else if (player == 2 && ( playerwin == 0))
+			scorePlayer2++;
+
+		calculWin();
+	}
+
+	public int calculAdvantage() {
+		if (scorePlayer1 >= 4 && scorePlayer1 - scorePlayer2 ==1 )
+			return 1;
+		if (scorePlayer2 >= 4 && scorePlayer2 - scorePlayer1 ==1)
+			return 2;
+
+		return 0;
+	}
+
+	public void calculWin() {
+		if( scorePlayer1 >= 4 && scorePlayer1 - scorePlayer2 >= 2 )
+			playerwin = 1;
+
+		if( scorePlayer2 >= 4 && scorePlayer2 - scorePlayer1 >= 2)
+			playerwin = 2;
+	}
+
+}

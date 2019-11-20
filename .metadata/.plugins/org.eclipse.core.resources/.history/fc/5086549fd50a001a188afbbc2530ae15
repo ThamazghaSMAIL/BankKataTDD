@@ -1,0 +1,8 @@
+package main;
+
+public class Transaction {
+
+	public Transaction(String date, int transaction, int solde) {
+	}
+
+}

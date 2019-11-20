@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;o&apos; from expression &apos;new Transaction(date,1000,1000)&apos;&#x0A;- Original project: &apos;BankKataTDD&apos;&#x0A;- Variable name: &apos;o&apos;&#x0A;- Destination method: &apos;main.BankTest.shouldReturnTransactionListWhenDepot()&apos;&#x0A;- Variable expression: &apos;new Transaction(date,1000,1000)&apos;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;o&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;main{BankTest.java" name="o" replace="true" selection="2257 31" stamp="1574172381024" varType="false" version="1.0"/>
+</session>

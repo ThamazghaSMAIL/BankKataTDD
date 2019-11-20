@@ -1,0 +1,12 @@
+package main;
+
+public class FakeTransfertAccount implements TransfertAccount{
+
+	@Override
+	public int transferPost(String ibanFrom, String ibanTo, Integer amount) {
+		if(amount >= 0)
+			return 200;
+		else 
+			return 400;
+	}
+}

@@ -1,0 +1,16 @@
+package main;
+
+public class Bank {
+	
+	private solde;
+
+	public int getSolde() {
+		return 0;
+	}
+
+	public void depot(int add) {
+		
+	}
+	
+
+}

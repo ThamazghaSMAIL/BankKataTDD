@@ -1,0 +1,184 @@
+package main;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class TennisTest {
+
+	Tennis tenis;
+	@Before 
+	public void setUp(){
+		tenis = new Tennis();
+	}
+
+	@Test
+	public void shouldReturnLoveDeuceWhenGameStart() {
+		assertEquals("Deuce", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnFifteenLoveWhenPlayer1Score() {
+		tenis.playerscore(1);
+		assertEquals("15-0", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnLoveFifteenWhenPlayer2Score() {
+		tenis.playerscore(2);
+		assertEquals("0-15", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnDeuceWhenPlayer1AndPlayer2ScoreOnePointEach() {
+		tenis.playerscore(1);
+		tenis.playerscore(2);
+		assertEquals("Deuce", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnDeuceWhenPlayer1AndPlayer2ScoreTwoPointEach() {
+		tenis.playerscore(1);
+		tenis.playerscore(2);
+		tenis.playerscore(1);
+		tenis.playerscore(2);
+		assertEquals("Deuce", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnThirtyLoveWhenPlayer1ScoreTwoPoints() {
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		assertEquals("30-0", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnFifteenThirtyWhenPlayer2ScoreTwoPointsAndPlayer1ScoreOnePoint() {
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		tenis.playerscore(1);
+		assertEquals("15-30", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnFortyLoveWhenPlayer1ScoreThreePoints() {
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		assertEquals("40-0", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnFortyThirtyWhenPlayer1ScoreThreePointsAndPlayer2ScoreTwoPoints() {
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		assertEquals("40-30", tenis.getResult());
+	}
+	
+	
+	@Test
+	public void shouldReturnWhenWhenPlayer1ScoreFourty() {
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		assertEquals("Player 1 Win", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnAdvantageWhenPlayer2ReachAdvantagePhase() {
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		assertEquals("Advantage for Player 2", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnPlayer1WinWhenPlayer1Win() {
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		assertEquals("Player 1 Win", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnPlayer2WinWhenPlayer2Win() {
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		assertEquals("Player 2 Win", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnDeuceWhenPlayer1WinWhenFourty() {
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		assertEquals("Player 1 Win", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnAdvantageWhenPlayer1ReachAdvantagePhase() {
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		
+		assertEquals("Advantage for Player 1", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnDeuceWhenPlayer1WhenLostAdvantage() {
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(2);
+		
+		assertEquals("Deuce", tenis.getResult());
+	}
+	
+	@Test
+	public void shouldReturnPlayer1WinWhenPlayer1ScoreAfterDeuce() {
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		tenis.playerscore(2);
+		
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+		tenis.playerscore(2);
+		
+		tenis.playerscore(1);
+		tenis.playerscore(1);
+
+		assertEquals("Player 1 Win", tenis.getResult());
+	}
+}

@@ -1,0 +1,9 @@
+package main;
+
+public class Transaction {
+
+	public Transaction(String date, int transaction, int solde) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

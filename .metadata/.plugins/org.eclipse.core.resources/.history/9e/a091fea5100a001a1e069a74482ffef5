@@ -1,0 +1,23 @@
+package main;
+
+public class FizzBuzz {
+
+	private final static MULTIPLE_3 = 3;
+	public String calculFizzBuzz(int i) {
+		
+		String result = "";
+		
+		if( i % 3 == 0 )
+			result += "Fizz";
+		
+		if(i % 5 == 0)
+			result += "Buzz";
+		
+		if (result == "") {
+			result = Integer.toString(i);
+		}
+		
+		return result;
+	}
+
+}
